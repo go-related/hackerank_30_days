@@ -1,17 +1,20 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"log"
+	"os"
 )
 
 func Exercise1() {
 	var word string
+	// to read a input with space in go you can't use the fmt directly(  fmt.Scanln(&word))
+	scanner := bufio.NewScanner(os.Stdin)
 
-	_, err := fmt.Scan(&word)
-	if err != nil {
-		log.Fatalf(err.Error())
+	if scanner.Scan() {
+		word = scanner.Text()
 	}
+
 	fmt.Println("Hello, World.")
 	fmt.Println(word)
 }
