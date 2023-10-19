@@ -3,7 +3,7 @@ package main
 import "github.com/juli/hackerank/30_days/days"
 
 func main() {
-	day4().Run()
+	day5().Run()
 }
 
 func day1() days.DayCallange {
@@ -19,4 +19,7 @@ func day3() days.DayCallange {
 }
 func day4() days.DayCallange {
 	return days.NewDayFours()
+}
+func day5() days.DayCallange {
+	return days.NewDayFive()
 }
