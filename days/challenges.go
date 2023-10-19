@@ -4,6 +4,7 @@ import (
 	"github.com/juli/hackerank/30_days/days/day1"
 	"github.com/juli/hackerank/30_days/days/day2"
 	"github.com/juli/hackerank/30_days/days/day3"
+	"github.com/juli/hackerank/30_days/days/day4"
 	"github.com/juli/hackerank/30_days/scanner"
 )
 
@@ -28,6 +29,12 @@ func NewDayTwo() DayCallange {
 func NewDayThree() DayCallange {
 	file := "sources/3.txt"
 	return &day3.Challange{
+		Scanner: scanner.NewFileScanner(file),
+	}
+}
+func NewDayFours() DayCallange {
+	file := "sources/4.txt"
+	return &day4.Challange{
 		Scanner: scanner.NewFileScanner(file),
 	}
 }
