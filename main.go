@@ -1,15 +1,19 @@
 package main
 
+import "github.com/juli/hackerank/30_days/days"
+
 func main() {
-	day2()
+	day3().Run()
 }
 
-func day1() {
-	testCases := NewExercise_1()
-	testCases.day1()
+func day1() days.DayCallange {
+	return days.NewDayOne()
 }
 
-func day2() {
-	testCases := NewExercise_2()
-	testCases.day2()
+func day2() days.DayCallange {
+	return days.NewDayTwo()
+}
+
+func day3() days.DayCallange {
+	return days.NewDayThree()
 }
