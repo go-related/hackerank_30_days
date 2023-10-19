@@ -11,6 +11,7 @@ type Challange struct {
 }
 
 func (e *Challange) Run() {
+	defer e.Scanner.Close()
 	var i uint64 = 4
 	var d float64 = 4.0
 	var s string = "HackerRank "

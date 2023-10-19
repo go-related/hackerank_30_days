@@ -7,8 +7,8 @@ import (
 )
 
 type FileScanner struct {
-	fileName string
-	scanner  *bufio.Scanner
+	file    *os.File
+	scanner *bufio.Scanner
 }
 
 func NewFileScanner(fileName string) *FileScanner {
@@ -19,8 +19,8 @@ func NewFileScanner(fileName string) *FileScanner {
 	}
 	//defer file.Close()
 	return &FileScanner{
-		fileName: fileName,
-		scanner:  bufio.NewScanner(file),
+		file:    file,
+		scanner: bufio.NewScanner(file),
 	}
 }
 
@@ -34,4 +34,15 @@ func (r *FileScanner) Text() string {
 
 func (r *FileScanner) Err() error {
 	return r.scanner.Err()
+}
+
+func (r *FileScanner) Close() error {
+	return r.file.Close()
+}
+
+func (r *FileScanner) ReadLine() string {
+	if r.Scan() {
+		return r.scanner.Text()
+	}
+	return ""
 }

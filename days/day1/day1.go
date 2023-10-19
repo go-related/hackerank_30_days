@@ -10,6 +10,7 @@ type Challange struct {
 }
 
 func (e *Challange) Run() {
+	defer e.Scanner.Close()
 	var word string
 
 	if e.Scanner.Scan() {

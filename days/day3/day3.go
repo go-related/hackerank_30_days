@@ -13,6 +13,7 @@ type Challange struct {
 }
 
 func (e *Challange) Run() {
+	defer e.Scanner.Close()
 	meal_cost, err := strconv.ParseFloat(strings.TrimSpace(e.readLine()), 64)
 	checkError(err)
 
@@ -25,6 +26,7 @@ func (e *Challange) Run() {
 	tax_percent := int32(tax_percentTemp)
 
 	solve(meal_cost, tip_percent, tax_percent)
+
 }
 func (e *Challange) readLine() string {
 	if e.Scanner.Scan() {

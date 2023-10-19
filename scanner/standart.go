@@ -26,3 +26,14 @@ func (r *RealScanner) Text() string {
 func (r *RealScanner) Err() error {
 	return r.scanner.Err()
 }
+
+func (r *RealScanner) Close() error {
+	return nil
+}
+
+func (r *RealScanner) ReadLine() string {
+	if r.Scan() {
+		return r.scanner.Text()
+	}
+	return ""
+}
